@@ -4,7 +4,8 @@
   "dependencies": {},
   "scripts": {
     "test": "gulp test",
-    "start": "gulp serve"
+    "start": "gulp serve",
+    "postinstall": "bower i"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
