@@ -1,0 +1,312 @@
+<header class="header fixed clearfix navbar navbar-fixed-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="header-left clearfix">
+          <div class="site-name-and-slogan smooth-scroll">
+            <div class="site-name">{{user.name[lang]}} {{user.surname[lang]}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-click="lang = 'en'"><img src="../../assets/images/icons/united-states-flag_8914.png"></a></li>
+            <li ng-click="lang = 'ru'"><img src="../../assets/images/icons/russia-flag_3794.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div id="headerwrap">
+  <div class="container" style="padding-top: 10%;">
+    <div class="row centered">
+      <div class="col-lg-12">
+        <h1><strong>{{user.name[lang]}}</strong> {{user.surname[lang]}}</h1><br/>
+        <h1 style="font-size: 41px">{{work[0].position[lang]}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section id="about" name="about"></section>
+<div id="intro">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-2 col-lg-offset-1">
+        <h5>{{translations["obj"][lang]}}</h5>
+      </div>
+      <div class="col-lg-6">
+        <p>{{user.objective[lang]}}</p>
+      </div>
+      <div class="col-lg-3">
+        <p><a href="#"><i class="icon-file"></i></a>
+          <sm>DOWNLOAD PDF</sm>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<section id="resume" name="resume"></section>
+<!--EDUCATION DESCRIPTION -->
+<div class="container desc">
+  <div class="row">
+
+    <div class="col-lg-2 col-lg-offset-1">
+      <h5>{{translations["education"][lang]}}</h5>
+    </div>
+    <div class="col-lg-6">
+      <p>
+        <t>{{education[2].nameInstitution[lang]}}</t>
+        <br/>
+        {{education[2].faculty[lang]}} <br/>
+      </p>
+    </div>
+    <div class="col-lg-3">
+      <p>
+        <sm>{{education[2].receiptDate}}</sm>
+        <br/>
+        <imp>
+          <sm>{{education[2].expirationDate}}</sm>
+        </imp>
+      </p>
+    </div>
+
+    <div class="col-lg-6 col-lg-offset-3">
+      <p>
+        <t>{{education[1].nameInstitution[lang]}}</t>
+        <br/>
+        {{education[1].faculty[lang]}}<br/>
+      </p>
+    </div>
+    <div class="col-lg-3">
+      <p>
+        <sm>{{education[1].receiptDate}}</sm>
+        <br/>
+        <imp>
+          <sm>{{education[1].expirationDate}}</sm>
+        </imp>
+      </p>
+    </div>
+
+    <div class="col-lg-6 col-lg-offset-3">
+      <p>
+        <t>{{education[0].nameInstitution[lang]}}</t>
+        <br/>
+        {{education[0].faculty[lang]}}<br/>
+      </p>
+    </div>
+    <div class="col-lg-3">
+      <p>
+        <sm>{{education[0].receiptDate}}</sm>
+        <br/>
+        <imp>
+          <sm>{{education[0].expirationDate}}</sm>
+        </imp>
+      </p>
+    </div>
+  </div>
+  <br>
+  <hr>
+</div>
+
+
+<!--WORK DESCRIPTION -->
+<div class="container desc">
+  <div class="row">
+
+    <div class="col-lg-2 col-lg-offset-1">
+      <h5>{{translations["workExperience"][lang]}}</h5>
+    </div>
+    <div class="col-lg-6">
+      <p>
+        <t>{{work[1].position[lang]}}</t>
+        <br/>
+        {{work[1].companyName[lang]}}<br/>
+      </p>
+      <p>
+        <more>{{work[1].duties[0]}}</more>
+        <br/>
+        <more>{{work[1].duties[1]}}</more>
+        <br/>
+        <more>{{work[1].duties[2]}}</more>
+        <br/>
+        <more>{{work[1].duties[3]}}</more>
+        <br/>
+      </p>
+    </div>
+    <div class="col-lg-3">
+      <p>
+        <sm>{{work[1].receiptDate[lang]}} - {{work[1].expirationDate[lang]}}</sm>
+      </p>
+    </div>
+
+    <div class="col-lg-6 col-lg-offset-3">
+      <p>
+        <t>{{work[0].position[lang]}}</t>
+        <br/>
+        {{work[0].companyName[lang]}} <br/>
+      </p>
+    </div>
+    <div class="col-lg-3">
+      <p>
+        <sm>{{work[0].receiptDate[lang]}} - {{work[0].expirationDate[lang]}}</sm>
+      </p>
+    </div>
+  </div>
+  <br>
+  <hr>
+</div>
+
+
+<!--SKILLS DESCRIPTION -->
+<div id="skillswrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 skillbar" ng-repeat="skill in user.skills">
+        <div class="skillbar-wrap">
+          <p>{{skill.name}}</p>
+          <progress max="100" value="{{skill.level}}" class="html5"></progress>
+          <br>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+<section id="work" name="work"></section>
+<!--PORTFOLIO DESCRIPTION -->
+<div class="container desc">
+  <div class="row">
+    <div class="col-lg-2 col-lg-offset-1">
+      <h5>{{translations["project"][lang]}}</h5>
+    </div>
+    <div class="col-lg-4">
+      <p><img class="img-responsive" src="{{projects[0].image}}" alt=""></p>
+    </div>
+    <div class="col-lg-4">
+      <h3>
+        <strong>{{projects[0].name[lang]}}</strong>
+      </h3>
+      <p>
+        <sm>{{projects[0].receiptDate[lang]}}</sm>
+        -
+        <imp>
+          <sm>{{projects[0].expirationDate[lang]}}</sm>
+          <br/>
+        </imp>
+      <p>
+        <t>{{translations["role"][lang]}}</t>
+        : {{projects[0].role[lang]}}
+      </p>
+      <p>
+        <t>{{translations["technologies"][lang]}}</t>
+        : {{projects[0].technologies}}
+      </p>
+      <more>{{projects[0].description[lang]}}<br/><br/>
+        <sm><i class="icon-tag"></i><a href="{{projects[0].projectLinks.playGoogle}}"><img style="width: 27%;"
+                                                                                           src="../../assets/images/google.png"></a>
+        </sm>
+        <sm><i class="icon-tag"></i><a href="{{projects[0].projectLinks.itunesApple}}"><img style="width: 26%;"
+                                                                                            src="../../assets/images/itunes-app-store-logo.png"></a>
+        </sm>
+      </more>
+      </p>
+    </div>
+
+    <div class="col-lg-4 col-lg-offset-3">
+      <p><img class="img-responsive" src="{{projects[1].image}}" alt=""></p>
+    </div>
+    <div class="col-lg-4">
+      <h3>
+        <strong>{{projects[1].name[lang]}}</strong>
+      </h3>
+      <p>
+        <sm>{{projects[1].receiptDate[lang]}}</sm>
+        -
+        <imp>
+          <sm>{{projects[1].expirationDate[lang]}}</sm>
+          <br/>
+        </imp>
+      <p>
+        <t>{{translations["role"][lang]}}</t>
+        : {{projects[1].role[lang]}}
+      </p>
+      <p>
+        <t>{{translations["technologies"][lang]}}</t>
+        : {{projects[1].technologies}}
+      </p>
+      <sm><i class="icon-tag"></i><a href="{{projects[1].projectLinks.playGoogle}}"><img style="width: 27%;"
+                                                                                         src="../../assets/images/google.png"></a>
+      </sm>
+      <sm><i class="icon-tag"></i><a href="{{projects[1].projectLinks.itunesApple}}"><img style="width: 26%;"
+                                                                                          src="../../assets/images/itunes-app-store-logo.png"></a>
+      </sm>
+      </more>
+      </p>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
+
+
+<section id="contact" name="contact"></section>
+<!--FOOTER DESCRIPTION -->
+<div id="footwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>{{translations["contact"][lang]}}</h5>
+      </div>
+      <div class="col-md-4">
+        <form>
+          <div class="form-group">
+            <input type="email" ng-model="send.email" class="form-control" placeholder="Email">
+          </div>
+          <textarea class="form-control" ng-model="send.text" rows="3"></textarea>
+          <button type="button" class="btn btn-default" ng-click="sendEmail(send)" style="margin-top: 15px;">
+            {{translations["submit"][lang]}}
+          </button>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <p>
+          <t>{{translations["email"][lang]}}</t>
+          <br/>
+          {{user.email}}<br/>
+        </p>
+        <p>
+          <t>{{translations["location"][lang]}}</t>
+          <br/>
+          {{user.location[lang]}}
+        </p>
+        <p>
+        <p>
+          <t>{{translations["phone"][lang]}}</t>
+          <br/>
+          {{user.phone}}<br/>
+        </p>
+        <a href="{{user.social_links.facebook}}"><img src="../../assets/images/4.png"></i></a>
+        <a href="{{user.social_links.github}}"><img src="../../assets/images/github.png"></i></a>
+        <a href="{{user.social_links.linkedin}}"><img src="../../assets/images/linkedin.png"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="c">
+  <div class="container">
+    <p>{{user.name[lang]}} <a href="{{user.social_links.facebook}}">{{user.surname[lang]}}</a>
+  </div>
+</div>
